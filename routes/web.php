@@ -14,4 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
+// HOMEPAGE
+Route::get('/', 'HomeController@index')->name('home');
+
+// BOOKS
+Route::resource('books', 'BookController');

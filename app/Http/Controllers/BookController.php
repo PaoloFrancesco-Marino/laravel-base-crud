@@ -59,6 +59,12 @@ class BookController extends Controller
         $book->description = $data['description'];
         $book->pages = $data['pages'];
         $saved = $book->save();
+
+        // redirect to show route
+        if ($saved) {
+            $newBook = Book::find($book->id);
+            return redirect()->route('books.show', $newBook);
+        }
     }
 
     /**
@@ -67,9 +73,9 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Book $book)
     {
-        //
+        return view('books.show', compact('book'));
     }
 
     /**

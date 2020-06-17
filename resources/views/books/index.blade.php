@@ -21,7 +21,7 @@
                     <tr>
                         <td> {{ $book->id }}</td>
                         <td> {{ $book->title }}</td>
-                        <td>Show</td>
+                        <td><a class="btn btn-success" href="{{ route('books.show', $book->id) }}">Show</a></td>
                         <td>Update</td>
                         <td>Delete</td>
                     </tr>

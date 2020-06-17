@@ -38,7 +38,27 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        // validation
+        $request->validate([
+            'title' => 'required|unique:books',
+            'author' => 'required',
+            'editor' => 'required',
+            'genre' => 'required',
+            'description' => 'required',
+            'pages' => 'required|numeric' 
+        ]);
+
+        // save a new book on DB
+        $book = new Book();
+        $book->title = $data['title'];
+        $book->author = $data['author'];
+        $book->editor = $data['editor'];
+        $book->genre = $data['genre'];
+        $book->description = $data['description'];
+        $book->pages = $data['pages'];
+        $saved = $book->save();
     }
 
     /**

@@ -22,7 +22,7 @@
     </li>
 </ul>
 
-<a class="btn btn-primary mt-5" href="{{ route('books.index') }}">My Books</a>
+<a class="btn btn-primary mt-5" href="{{ route('books.index') }}">Books List</a>
 <a class="btn btn-danger mt-5" href="{{ route('books.edit', $book->id) }}">Modifica Libro</a>
 
     

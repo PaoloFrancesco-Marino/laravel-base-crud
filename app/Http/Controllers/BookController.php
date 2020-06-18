@@ -119,13 +119,20 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy(Book $book)
+    {   
+        // ref to delete
+        $ref = $book->title;
+        $deleted = $book->delete();
+
+        // redirect
+        if($deleted) {
+            return redirect()->route('books.index')->with('deleted', $ref);
+        }
     }
 
     /**
-     * Utilities
+     * Utilities function
      */
 
     // validations rules

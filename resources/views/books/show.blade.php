@@ -21,5 +21,7 @@
         Pagine: {{ $book->pages }}
     </li>
 </ul>
+
+<a class="btn btn-primary mt-5" href="{{ route('books.index') }}">My Books</a>
     
 @endsection

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     // fillables permette scrittura/modifica degli attributi
-    protected $fillables = [
+    protected $fillable = [
         'title',
         'author',
         'editor',

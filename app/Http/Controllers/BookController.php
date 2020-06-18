@@ -52,12 +52,18 @@ class BookController extends Controller
 
         // save a new book on DB
         $book = new Book();
-        $book->title = $data['title'];
-        $book->author = $data['author'];
-        $book->editor = $data['editor'];
-        $book->genre = $data['genre'];
-        $book->description = $data['description'];
-        $book->pages = $data['pages'];
+        // fillable method
+        $book->fill($data);
+
+        // no fillable method
+        // $book->title = $data['title'];
+        // $book->author = $data['author'];
+        // $book->editor = $data['editor'];
+        // $book->genre = $data['genre'];
+        // $book->description = $data['description'];
+        // $book->pages = $data['pages'];
+
+        // saved result
         $saved = $book->save();
 
         // redirect to show route

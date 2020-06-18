@@ -10,18 +10,19 @@
 <body>
 
     <header class="mb-5">
-        <nav class="navbar navbar-expand navbar-light bg-dark text-white">
-            <div class="nav-brand">Laravel Crud</div>
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <div class="nav-brand text-white text-uppercase">Laravel Crud</div>
+            
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link " href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('books.index') }}">My Books</a>
+                    <a class="nav-link" href="{{ route('books.index') }}">My Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('books.create') }}">Add Books</a>
+                    <a class="nav-link" href="{{ route('books.create') }}">Add Books</a>
                 </li>
             </ul>
         </nav>

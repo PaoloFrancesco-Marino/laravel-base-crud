@@ -20,28 +20,28 @@
     @method('POST')
 
     <div class="form-group">
-        <label for="title">Titolo</label>
-        <input id="title" type="text" class="form-control" name="title" placeholder="Inserisci titolo del libro">
+        <label class="font-weight-bold" for="title">Titolo</label>
+    <input id="title" type="text" class="form-control" name="title" placeholder="Inserisci titolo del libro" value="{{ old('title') }}">
     </div>
     <div class="form-group">
-        <label for="author">Autore</label>
-        <input id="author" type="text" class="form-control" name="author" placeholder="Inserisci autore">
+        <label class="font-weight-bold" for="author">Autore</label>
+        <input id="author" type="text" class="form-control" name="author" placeholder="Inserisci autore" value="{{ old('author') }}">
     </div>
     <div class="form-group">
-        <label for="editor">Editore</label>
-        <input id="editor" type="text" class="form-control" name="editor" placeholder="Inserisci editore">
+        <label class="font-weight-bold" for="editor">Editore</label>
+        <input id="editor" type="text" class="form-control" name="editor" placeholder="Inserisci editore" value="{{ old('editor') }}">
     </div>
     <div class="form-group">
-        <label for="genre">Genere</label>
-        <input id="genre" type="text" class="form-control" name="genre" placeholder="Inserisci genere">
+        <label class="font-weight-bold" for="genre">Genere</label>
+        <input id="genre" type="text" class="form-control" name="genre" placeholder="Inserisci genere" value="{{ old('genre') }}">
     </div>
     <div class="form-group">
-        <label for="description">Descrizione</label>
-        <input id="description" type="text" class="form-control" name="description" placeholder="Inserisci descrizione">
+        <label class="font-weight-bold" for="description">Descrizione</label>
+        <input id="description" type="text" class="form-control" name="description" placeholder="Inserisci descrizione" value="{{ old('description') }}">
     </div>
     <div class="form-group">
-        <label for="pages">Numero Pagine</label>
-        <input id="pages" type="number" class="form-control" name="pages" placeholder="Inserisci numero pagine">
+        <label class="font-weight-bold" for="pages">Numero Pagine</label>
+        <input id="pages" type="number" class="form-control" name="pages" placeholder="Inserisci numero pagine" value="{{ old('pages') }}">
     </div>
     <input class="btn btn-primary" type="submit" value="Aggiungi libro">
 </form>

@@ -41,7 +41,7 @@
     </div>
     <div class="form-group">
         <label class="font-weight-bold" for="pages">Numero Pagine</label>
-        <input id="pages" type="number" class="form-control" name="pages" placeholder="Inserisci numero pagine" value="{{ old('pages') }}">
+        <input id="pages" type="number" class="form-control" name="pages" placeholder="Inserisci numero pagine" value="{{ old('title') }}">
     </div>
     <input class="btn btn-primary" type="submit" value="Aggiungi libro">
 </form>

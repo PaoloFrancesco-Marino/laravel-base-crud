@@ -22,7 +22,7 @@
                         <td> {{ $book->id }}</td>
                         <td> {{ $book->title }}</td>
                         <td><a class="btn btn-success" href="{{ route('books.show', $book->id) }}">Show</a></td>
-                        <td>Update</td>
+                        <td><a class="btn btn-primary" href="{{ route('books.edit', $book->id) }}">Update</td>
                         <td>Delete</td>
                     </tr>
                 @endforeach

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 use App\Book;
+
 
 class BookController extends Controller
 {
@@ -41,14 +43,7 @@ class BookController extends Controller
         $data = $request->all();
 
         // validation
-        $request->validate([
-            'title' => 'required|unique:books',
-            'author' => 'required',
-            'editor' => 'required',
-            'genre' => 'required',
-            'description' => 'required',
-            'pages' => 'required|numeric' 
-        ]);
+        $request->validate($this->rulesValidation());
 
         // save a new book on DB
         $book = new Book();
@@ -90,9 +85,9 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Book $book)
     {
-        //
+        return view('books.edit', compact('book'));
     }
 
     /**
@@ -102,9 +97,20 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Book $book)
     {
-        //
+        $data = $request->all();
+
+        // validation
+        $request->validate($this->rulesValidation($book->id));
+
+        // update data on DB
+        $updated = $book->update($data);
+
+        // redirect
+        if($updated) {
+            return redirect()->route('books.show', $book->id);
+        }
     }
 
     /**
@@ -116,5 +122,27 @@ class BookController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Utilities
+     */
+
+    // validations rules
+    private function rulesValidation($id = null) {
+        return [
+            'title' => [
+                'required',
+                Rule::unique('books')->ignore($id)
+            ],
+            'author' => 'required',
+            'editor' => 'required',
+            'genre' => 'required',
+            'description' => 'required',
+            'pages' => [
+                'required',
+                'numeric'
+                ] 
+        ];
     }
 }

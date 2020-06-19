@@ -37,7 +37,8 @@
     </div>
     <div class="form-group">
         <label class="font-weight-bold" for="description">Descrizione</label>
-        <input id="description" type="text" class="form-control" name="description" placeholder="Inserisci descrizione" value="{{ old('description', $book->description) }}">
+        {{-- <input id="description" type="text" class="form-control" name="description" placeholder="Inserisci descrizione" value="{{ old('description', $book->description) }}"> --}}
+        <textarea name="description" id="description" class="form-control" cols="30" rows="10" placeholder="Inserisci descrizione" {{ old('description', $book->description) }}></textarea>
     </div>
     <div class="form-group">
         <label class="font-weight-bold" for="pages">Numero Pagine</label>
